@@ -4,8 +4,6 @@ import argparse
 from tojson import toJson
 
 def main():
-    # url = "https://canvas.oregonstate.edu/feeds/calendars/user_Isd3z5yGcoNDhxfzoUWCXliURkw5V1sm7mT5SV5l.ics"
-
     # process args
     args = argsparser.parse_args()
     url = args.url

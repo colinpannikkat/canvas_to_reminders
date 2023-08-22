@@ -1,5 +1,3 @@
-import pprint
-
 class ICSParser():
     '''
     Takes in ics file and outputs it into dictionary format
@@ -14,8 +12,6 @@ class ICSParser():
     }
 
     '''
-    def __init__(self):
-        None
     def parse(self, text):
         text = text.split("BEGIN:VEVENT")
         event = {}
@@ -32,8 +28,9 @@ class ICSParser():
 
     def cleanString(self, string, *args):
         for str in args:
-            string = string.replace(str, '*')
-        string = string.replace('*'*len(args)+' ', '')
+            splitstring = string.split(str)
+            splitstring = [x.lstrip() for x in splitstring]
+            string = ''.join(splitstring)
         return string
 
     def getSplitString(self, string, str1, str2):
